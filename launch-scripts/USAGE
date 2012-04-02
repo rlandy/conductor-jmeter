@@ -1,0 +1,10 @@
+TEST STEPS
+ - Use the configure-and-create-users.sh (https://github.com/aeolusproject/aeolus-performance-testing/tree/master/jmeter/scripts) to cleanup and configure Aeolus for the provider under test and to add users
+ - To test Conductor's performance, use the 'mock' provider
+ - Use the image build-and-push test (https://github.com/aeolusproject/aeolus-performance-testing/tree/master/jmeter/build-and-push) to create and push one test image to the mock provider
+ - Now edit/modify just-luanch-fedora-15.jmx script:
+ - In the HTTP Request Defaults node, change the server name/ip as needed
+ - In the 'instance launch group Thread Group', 
+ - - change the number of thread = number of instances you want the test to launch
+ - - change the 'ramp-up' period to space the start time of each thread/instance launch
+
