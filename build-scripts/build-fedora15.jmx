@@ -24,12 +24,37 @@
           </elementProp>
           <elementProp name="CONDUCTOR_SERVER" elementType="Argument">
             <stringProp name="Argument.name">CONDUCTOR_SERVER</stringProp>
-            <stringProp name="Argument.value">${__P(conductor.server,localhost)}</stringProp>
+            <stringProp name="Argument.value">${__P(conductor_server,localhost)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NUMBER_OF_IMAGES" elementType="Argument">
+            <stringProp name="Argument.name">NUMBER_OF_IMAGES</stringProp>
+            <stringProp name="Argument.value">${__P(number_of_images,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="NUMBER_OF_USERS" elementType="Argument">
             <stringProp name="Argument.name">NUMBER_OF_USERS</stringProp>
             <stringProp name="Argument.value">${__P(number_of_users,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CLEAN_CONDUCTOR_DB" elementType="Argument">
+            <stringProp name="Argument.name">CLEAN_CONDUCTOR_DB</stringProp>
+            <stringProp name="Argument.value">${__P(clean_conductor_db,true)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PROVIDER_TYPE" elementType="Argument">
+            <stringProp name="Argument.name">PROVIDER_TYPE</stringProp>
+            <stringProp name="Argument.value">${__P(provider_type,mock)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SERVER_CREDS_NAME" elementType="Argument">
+            <stringProp name="Argument.name">SERVER_CREDS_NAME</stringProp>
+            <stringProp name="Argument.value">${__P(server_creds_name,xxxx)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SERVER_CREDS_PW" elementType="Argument">
+            <stringProp name="Argument.name">SERVER_CREDS_PW</stringProp>
+            <stringProp name="Argument.value">${__P(server_creds_pw,xxxx)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -57,7 +82,7 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">${NUMBER_OF_USERS}</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${NUMBER_OF_IMAGES}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">0</stringProp>
         <longProp name="ThreadGroup.start_time">1330036184000</longProp>
         <longProp name="ThreadGroup.end_time">1330036184000</longProp>
@@ -119,6 +144,38 @@
               </elementProp>
             </collectionProp>
           </HeaderManager>
+          <hashTree/>
+          <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="BSF PreProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters">${CONDUCTOR_SERVER} ${CLEAN_CONDUCTOR_DB} ${NUMBER_OF_USERS} ${PROVIDER_TYPE} ${SERVER_CREDS_NAME} ${SERVER_CREDS_PW}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import com.redhat.qe.tools.SSHCommandRunner;
+
+def SSHCommandRunner sshCommandRunner;
+sshCommandRunner = 
+  	new SSHCommandRunner(args[0], args[4], args[5] , &quot;cat /home/aeolus-performace-testing/README &quot;);
+def String readme;
+
+if (args[1].equals(&quot;true&quot;)) {
+
+  sshCommandRunner.run();
+  readme = sshCommandRunner.getStdout().trim();
+  System.out.println(&quot;README = &quot;+ readme);
+ 
+ if (readme.contains(&quot;performance of aeolus&quot;)) {
+  sshCommandRunner.runCommandAndWait(&quot;rm -rf /home/aeolus-performace-testing/*&quot;);
+ }else{
+  System.out.println( &quot;no aeolus-performace-testing directory exists&quot;);
+}
+ System.out.println(&quot;cloning aeolus-performace-testing repo&quot;);
+ sshCommandRunner.runCommandAndWait( &quot;cd /home;  git clone https://github.com/aeolusproject/aeolus-performance-testing.git&quot;);
+ sshCommandRunner.runCommandAndWait( &quot;/home/aeolus-performance-testing/jmeter/scripts/configure-and-create-users.sh -u &quot; + args[2] + &quot; -p &quot; +  args[3] );
+
+} else {
+  System.out.println( &quot;Not creating any new users&quot;);
+}
+</stringProp>
+          </BSFPreProcessor>
           <hashTree/>
         </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/conductor/user_session" enabled="true">

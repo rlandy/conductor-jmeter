@@ -24,7 +24,7 @@
           </elementProp>
           <elementProp name="CONDUCTOR_SERVER" elementType="Argument">
             <stringProp name="Argument.name">CONDUCTOR_SERVER</stringProp>
-            <stringProp name="Argument.value">${__P(conductor.server,localhost)}</stringProp>
+            <stringProp name="Argument.value">${__P(conductor_server,localhost)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="RESULTS_FILE" elementType="Argument">
