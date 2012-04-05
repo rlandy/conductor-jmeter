@@ -19,7 +19,7 @@
           </elementProp>
           <elementProp name="THREADS" elementType="Argument">
             <stringProp name="Argument.name">THREADS</stringProp>
-            <stringProp name="Argument.value">${__P(threads,1)}</stringProp>
+            <stringProp name="Argument.value">${__P(threads,5)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="CONDUCTOR_SERVER" elementType="Argument">
@@ -1125,16 +1125,16 @@
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="utf8" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">utf8</stringProp>
-                  <stringProp name="Argument.value">✓</stringProp>
+                  <stringProp name="Argument.value">%E2%9C%93</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
                 <elementProp name="authenticity_token" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">authenticity_token</stringProp>
-                  <stringProp name="Argument.value">2oFCgXh21u/ekVKbtkdz9dCkON+oow5cLGlv0vF5CPw=</stringProp>
+                  <stringProp name="Argument.value">Iq%2F9XvdX3GzsnAdbJdnSldQUCKtJfcVWLs0bPmMXRdk%3D</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
@@ -1145,9 +1145,9 @@
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
-                <elementProp name="deployable[name]" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.name">deployable[name]</stringProp>
+                <elementProp name="deployable%5Bname%5D" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">deployable%5Bname%5D</stringProp>
                   <stringProp name="Argument.value">f15-blueprint-user${__threadNum}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
@@ -1155,13 +1155,13 @@
                 <elementProp name="hardware_profile" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">hardware_profile</stringProp>
-                  <stringProp name="Argument.value">${__P(HWP1_ID)}</stringProp>
+                  <stringProp name="Argument.value">5</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
-                <elementProp name="catalog_id[]" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.name">catalog_id[]</stringProp>
+                <elementProp name="catalog_id%5B%5D" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">catalog_id%5B%5D</stringProp>
                   <stringProp name="Argument.value">1</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
