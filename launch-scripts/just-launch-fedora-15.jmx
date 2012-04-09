@@ -506,7 +506,7 @@
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="extract hardware profile id" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">HWP1_ID</stringProp>
-            <stringProp name="RegexExtractor.regex">href=&quot;/conductor/hardware_profiles/(.+?)&quot;&gt;hwp1</stringProp>
+            <stringProp name="RegexExtractor.regex">href=&quot;/conductor/hardware_profiles/(.+?)&quot;&gt;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">HWP1_ID_NOT_FOUND</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
@@ -1155,7 +1155,7 @@
                 <elementProp name="hardware_profile" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.name">hardware_profile</stringProp>
-                  <stringProp name="Argument.value">5</stringProp>
+                  <stringProp name="Argument.value">${__P(HWP1_ID)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 </elementProp>
