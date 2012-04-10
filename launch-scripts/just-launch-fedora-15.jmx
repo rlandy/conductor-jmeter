@@ -425,12 +425,12 @@
                 </elementProp>
                 <elementProp name="ResponseCode" elementType="Argument">
                   <stringProp name="Argument.name">ResponseCode</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.value">200</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="ResponseMessage" elementType="Argument">
                   <stringProp name="Argument.name">ResponseMessage</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.value">OK</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="Status" elementType="Argument">
@@ -532,12 +532,12 @@
                 </elementProp>
                 <elementProp name="ResponseCode" elementType="Argument">
                   <stringProp name="Argument.name">ResponseCode</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.value">200</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="ResponseMessage" elementType="Argument">
                   <stringProp name="Argument.name">ResponseMessage</stringProp>
-                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.value">OK</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="Status" elementType="Argument">
