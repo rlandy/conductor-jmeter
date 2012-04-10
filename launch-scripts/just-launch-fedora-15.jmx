@@ -1552,7 +1552,7 @@
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
-              <timestamp>false</timestamp>
+              <timestamp>true</timestamp>
               <success>true</success>
               <label>true</label>
               <code>true</code>
@@ -1562,17 +1562,16 @@
               <encoding>false</encoding>
               <assertions>true</assertions>
               <subresults>true</subresults>
-              <responseData>true</responseData>
-              <samplerData>true</samplerData>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
               <xml>true</xml>
-              <fieldNames>false</fieldNames>
-              <responseHeaders>true</responseHeaders>
-              <requestHeaders>true</requestHeaders>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
               <responseDataOnError>false</responseDataOnError>
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
-              <threadCounts>true</threadCounts>
             </value>
           </objProp>
           <stringProp name="filename">${RESULTS_FILE}</stringProp>
