@@ -506,7 +506,7 @@
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="extract hardware profile id" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">HWP1_ID</stringProp>
-            <stringProp name="RegexExtractor.regex">href=&quot;/conductor/hardware_profiles/(.+?)&quot;&gt;</stringProp>
+            <stringProp name="RegexExtractor.regex">href=&quot;/conductor/hardware_profiles/([0-9]*)&quot;&gt;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default">HWP1_ID_NOT_FOUND</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
