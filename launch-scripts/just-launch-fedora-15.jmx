@@ -1584,20 +1584,20 @@
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">
             <time>true</time>
-            <latency>false</latency>
-            <timestamp>true</timestamp>
+            <latency>true</latency>
+            <timestamp>false</timestamp>
             <success>true</success>
             <label>true</label>
-            <code>false</code>
+            <code>true</code>
             <message>true</message>
             <threadName>true</threadName>
-            <dataType>false</dataType>
+            <dataType>true</dataType>
             <encoding>false</encoding>
-            <assertions>false</assertions>
-            <subresults>false</subresults>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
             <responseData>false</responseData>
             <samplerData>false</samplerData>
-            <xml>false</xml>
+            <xml>true</xml>
             <fieldNames>true</fieldNames>
             <responseHeaders>false</responseHeaders>
             <requestHeaders>false</requestHeaders>
